@@ -1,0 +1,9 @@
+# Node.js / JavaScript related
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build directories
+build/
+dist/
+.out/

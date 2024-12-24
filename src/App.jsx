@@ -1,4 +1,4 @@
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, NavLink } from "react-router-dom";
 import FormsValidation from "./pages/FormsValidation";
 import MultiStepFormPage from "./pages/MultiStepsFormPage";
 import MultiStepFormikYup from "./pages/MultiStepsFormYupFormik";
@@ -8,35 +8,54 @@ function App() {
   return (
     <>
       <nav className="bg-gray-900 p-4 text-white flex flex-col md:flex-row justify-between items-center">
-        <ul className="flex flex-col md:flex-row">
+        <ul className="flex flex-col md:flex-row gap-3">
           <li>
-            <Link to="/" className="px-4 py-2 hover:bg-gray-700 rounded-md">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "px-4 py-2 bg-gray-700 rounded-md"
+                  : "px-4 py-2 hover:bg-gray-700 rounded-md"
+              }
+            >
               Forms Validation
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/pure-multi-steps-form"
-              className="px-4 py-2 hover:bg-gray-700 rounded-md"
+              className={({ isActive }) =>
+                isActive
+                  ? "px-4 py-2 bg-gray-700 rounded-md"
+                  : "px-4 py-2 hover:bg-gray-700 rounded-md"
+              }
             >
               Multi Step Form pure
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/pure-multi-steps-formik-yup"
-              className="px-4 py-2 hover:bg-gray-700 rounded-md"
+              className={({ isActive }) =>
+                isActive
+                  ? "px-4 py-2 bg-gray-700 rounded-md"
+                  : "px-4 py-2 hover:bg-gray-700 rounded-md"
+              }
             >
               Multi Step Form yup & formik
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/rating"
-              className="px-4 py-2 hover:bg-gray-700 rounded-md"
+              className={({ isActive }) =>
+                isActive
+                  ? "px-4 py-2 bg-gray-700 rounded-md"
+                  : "px-4 py-2 hover:bg-gray-700 rounded-md"
+              }
             >
               Rating
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
